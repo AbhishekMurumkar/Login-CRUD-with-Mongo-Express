@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/52820f02ac.js"></script>
+    <title>Document</title>
+    <script type="text/javascript">
+        console.log('home'); 
+        function updateID(id){console.log(id);window.location=window.location.origin+"/user/updateUser/"+id}
+        function deleteID(id){console.log(id);window.location=window.location.origin+"/user/deleteUser/"+id}
+    </script>
+</head>
+
+<body class="container">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Login-CRUD Project</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/user/home">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/user/logout">Logout</a>
+    </div>
+  </div>
+</nav>
+    <br><br>
+    <h1>Welcome <i><%= username %></i></h1><br>
+    <h3>List of all users</h3>
+    <table class="table">
+        <thead>
+            <tr scope="row">
+                <td>S.no</td>
+                <td>User Name</td>
+                <td>User Email</td>
+                <td> Update </td>
+                <td> Remove </td>
+            </tr>
+        </thead>
+        <%for(var i=0;i< all_users.length;i++){%>
+        <tr scope="row">
+            <td><%= i+1 %></td> 
+            <td><%= all_users[i].username %></td>
+            <td><%= all_users[i].useremail %></td>
+            <td onClick="updateID('<%= all_users[i]._id %>')"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></td>
+            <td onClick="deleteID('<%= all_users[i]._id %>')"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></td>
+        </tr>
+        <%}%>
+    </table>
+</body>
+
+</html>

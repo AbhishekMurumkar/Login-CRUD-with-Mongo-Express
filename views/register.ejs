@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("header.ejs") -%>
+</head>
+<body class="container">
+    <br>
+    <br>
+    <center><h2>Registration is made here</h2></center>
+    <form action="/" method="POST">
+        <table  class="table table-striped">
+             <div class="form-group">
+            <tr scope="row">
+                <td colspan="2"><input class="form-control" type="text" name="username" placeholder="Type your User Name" /></td>
+            </tr>
+            <tr scope="row">
+                <td colspan="2"> <input class="form-control" type="number" name="mobile" placeholder="Enter your mobile number" /></td>
+            </tr>
+            <tr scope="row">
+                <td colspan="2"><input class="form-control" type="email" name="useremail" placeholder="Type your email" /></td>
+            </tr>
+            <tr scope="row">
+                <td colspan="2"><input class="form-control" type="password" name="p1" placeholder="Type your PassCode" /></td>
+            </tr>
+            <tr scope="row">
+                <td colspan="2"><input class="form-control" type="password" name="p2" placeholder="Retype your PassCode" /></td>
+            </tr>
+            <tr scope="row">
+                <td><a href="/login"><button class="btn btn-primary mb-2">Login</button></a></td>
+                <td><button value="submit" class="btn btn-primary mb-2">Register Me</button></td>
+            </tr>
+             </div>
+        </table>
+    </form>
+</body>
+</html>

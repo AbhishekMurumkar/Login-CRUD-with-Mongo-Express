@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <%- include("header.ejs") %>
+
+</head>
+<body class="container">
+	<br>
+	<center><h3>Login</h3></center>
+	<br>
+       <form method="POST" action="/login">
+       	<table class="table">
+       		<div class="form-group">
+       			<tr scope="row"><td><input  class="form-control" type="email" name="useremail" placeholder="Enter your email" /></td></tr>
+        		<tr scope="row"><td><input class="form-control" type="password" name="userpass" placeholder="Enter your password" /></td></tr>
+        		<tr scope="row"><td><button class="btn btn-primary mb-2" type="submit">Login</button></td></tr>
+   			 </div>
+       	</table>
+    </form>
+</body>
+</html>
